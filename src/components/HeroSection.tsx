@@ -1,76 +1,45 @@
-import { motion } from "framer-motion";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/30" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-primary/10 blur-3xl" />
-      
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-6"
-        >
-          web and design
-        </motion.p>
-        
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
-        >
-          <span className="gradient-gold-text">illustré</span>
-        </motion.h1>
-        
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 font-body font-light"
-        >
-          Modern, letisztult weboldalak és alkalmazások fejlesztése. 
-          Grafikai tervezés és komplett arculat kialakítás.
-        </motion.p>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <a
-            href="#kapcsolat"
-            className="gradient-gold text-primary-foreground font-body font-medium px-8 py-3 rounded-md hover:opacity-90 transition-opacity"
-          >
-            Kérjen árajánlatot
-          </a>
+    <section id="fooldal" className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+      <img
+        src={heroBg}
+        alt="Szerveterem"
+        width={1920}
+        height={1080}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-steel/80 via-steel/60 to-steel/90" />
+
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto py-32">
+        <p className="text-primary-foreground/60 font-body text-sm tracking-[0.25em] uppercase mb-4">
+          Solutions for IT
+        </p>
+        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-primary-foreground mb-4">
+          Megoldások az IT számos területén
+        </h1>
+        <p className="text-primary-foreground/80 text-lg md:text-xl font-body font-light mb-3 italic">
+          "Backup & Restore any data anywhere"
+        </p>
+        <p className="text-primary-foreground/60 font-body text-sm mb-10">
+          Együtt megoldást találunk
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#szolgaltatasok"
-            className="border border-primary/30 text-primary font-body font-medium px-8 py-3 rounded-md hover:bg-primary/10 transition-colors"
+            className="gradient-teal text-primary-foreground font-body font-medium px-8 py-3.5 rounded-lg hover:opacity-90 transition-opacity"
           >
             Szolgáltatások
           </a>
-        </motion.div>
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <div className="w-5 h-8 border-2 border-primary/30 rounded-full flex justify-center">
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-1 h-2 bg-primary rounded-full mt-1.5"
-          />
+          <a
+            href="#kapcsolat"
+            className="border border-primary-foreground/30 text-primary-foreground font-body font-medium px-8 py-3.5 rounded-lg hover:bg-primary-foreground/10 transition-colors"
+          >
+            Kapcsolat
+          </a>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

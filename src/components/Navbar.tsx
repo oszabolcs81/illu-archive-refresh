@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "Főoldal", href: "#" },
+  { label: "Főoldal", href: "#fooldal" },
   { label: "Szolgáltatások", href: "#szolgaltatasok" },
   { label: "Rólunk", href: "#rolunk" },
-  { label: "Projektek", href: "#projektek" },
-  { label: "Vélemények", href: "#velemenyek" },
   { label: "Kapcsolat", href: "#kapcsolat" },
 ];
 
@@ -22,17 +19,26 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : ""
+        scrolled
+          ? "bg-surface shadow-md backdrop-blur-sm border-b border-border"
+          : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-heading text-2xl font-bold gradient-gold-text">
-          illustré
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#fooldal" className="flex items-center gap-2">
+          <div className="w-10 h-10 gradient-teal rounded-lg flex items-center justify-center">
+            <span className="text-primary-foreground font-heading text-lg">I</span>
+          </div>
+          <div className="leading-tight">
+            <span className={`font-heading text-xl ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+              ILLU KFT
+            </span>
+            <span className={`block text-[10px] tracking-[0.15em] uppercase ${scrolled ? "text-muted-foreground" : "text-primary-foreground/70"}`}>
+              Solutions for IT
+            </span>
+          </div>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -40,7 +46,9 @@ const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              className="text-muted-foreground hover:text-primary transition-colors text-sm font-body tracking-wide"
+              className={`text-sm font-body font-medium tracking-wide transition-colors hover:text-primary ${
+                scrolled ? "text-foreground" : "text-primary-foreground"
+              }`}
             >
               {item.label}
             </a>
@@ -49,33 +57,29 @@ const Navbar = () => {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground"
+          className={`md:hidden ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {mobileOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          className="md:hidden bg-card border-b border-border"
-        >
+        <div className="md:hidden bg-surface border-b border-border shadow-lg">
           <div className="px-6 py-4 flex flex-col gap-4">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-muted-foreground hover:text-primary transition-colors font-body"
+                className="text-foreground hover:text-primary transition-colors font-body"
               >
                 {item.label}
               </a>
             ))}
           </div>
-        </motion.div>
+        </div>
       )}
-    </motion.nav>
+    </nav>
   );
 };
 

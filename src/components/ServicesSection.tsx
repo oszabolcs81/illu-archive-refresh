@@ -1,63 +1,82 @@
-import { motion } from "framer-motion";
-import { Globe, Smartphone, Palette } from "lucide-react";
+import { Database, Server, MessageSquare } from "lucide-react";
+import backupImg from "@/assets/backup.jpg";
+import infraImg from "@/assets/infrastructure.jpg";
+import consultingImg from "@/assets/consulting.jpg";
 
 const services = [
   {
-    icon: Globe,
-    title: "Web Design",
+    icon: Database,
+    title: "Mentés",
+    subtitle: "Backup & Restore",
+    image: backupImg,
     description:
-      "Az ügyfeleink igényeinek megfelelően modern, letisztult weblapok készítése. Blog, bemutató honlap, webshop vagy online oktatási platform.",
+      "A file-ok és adatok megfelelő szintű védelmének két peremfeltétele azok biztonságos mentése, illetve, hogy abból a mentésből vissza is tudjunk állni. Olyan megoldást kínálunk, mely gyakorlatilag bármilyen adatforrást képes átlátható és megbízható módon menteni.",
   },
   {
-    icon: Smartphone,
-    title: "Alkalmazás fejlesztés",
+    icon: Server,
+    title: "IT infrastruktúra",
+    subtitle: "Tervezés & Üzemeltetés",
+    image: infraImg,
     description:
-      "Android-ra, iOS-re vagy cross platform-ra tervezett alkalmazások megtervezése, rajzolása és kódolása.",
+      "Egy IT kiszolgáló környezet manapság a lelke mindennek, így annak rendszeres karbantartása és felügyelete elengedhetetlen. Tervezéstől a kivitelezésen át a teljes körű support tevékenységekben is számíthat ránk.",
   },
   {
-    icon: Palette,
-    title: "Grafika",
+    icon: MessageSquare,
+    title: "Tanácsadás",
+    subtitle: "Konzultáció & Támogatás",
+    image: consultingImg,
     description:
-      "Logó, névjegykártya, szórólap, plakát tervezés. Komplett arculat megtervezése. Videó felvétel, vágás és szerkesztés.",
+      '"Minden egy beszélgetéssel kezdődött..." Cégünk elhivatott és nyitottan áll az IT területén belül Ügyfeleink irányába, hogy meghallgassa és felfedje a valós igényeket és problémákat.',
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <section id="szolgaltatasok" className="py-24 px-6">
+    <section id="szolgaltatasok" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-primary text-sm tracking-[0.2em] uppercase mb-3 font-body">
+        <div className="text-center mb-14">
+          <p className="text-teal font-body text-sm tracking-[0.2em] uppercase mb-2">
             Szolgáltatások
           </p>
-          <h2 className="font-heading text-3xl md:text-5xl font-bold">
-            <span className="gradient-gold-text">Cégünk</span> szakosodásai
+          <h2 className="font-heading text-3xl md:text-4xl text-foreground">
+            Szolgáltatási területek
           </h2>
-        </motion.div>
+          <p className="text-muted-foreground font-body mt-3 max-w-2xl mx-auto text-sm">
+            Az IT területén elsősorban a lent felsorolt szolgáltatásokat nyújtja cégünk, természetesen igény szerint egyéb területeken is szívesen állunk rendelkezésére.
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, i) => (
-            <motion.div
+          {services.map((service) => (
+            <div
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="bg-card border border-border rounded-lg p-8 hover:border-primary/30 transition-colors group"
+              className="bg-surface rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow group"
             >
-              <div className="w-12 h-12 rounded-md gradient-gold flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <service.icon size={24} className="text-primary-foreground" />
+              <div className="h-48 overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  loading="lazy"
+                  width={800}
+                  height={600}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-              <h3 className="font-heading text-xl font-semibold mb-3">{service.title}</h3>
-              <p className="text-muted-foreground font-body text-sm leading-relaxed">
-                {service.description}
-              </p>
-            </motion.div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 gradient-teal rounded-lg flex items-center justify-center shrink-0">
+                    <service.icon size={20} className="text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-xl text-foreground">{service.title}</h3>
+                    <p className="text-muted-foreground font-body text-xs">{service.subtitle}</p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground font-body text-sm leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
