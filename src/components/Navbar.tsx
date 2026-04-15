@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import illuLogo from "@/assets/illu-logo.png";
 
 const navItems = [
   { label: "Főoldal", href: "#fooldal" },
@@ -28,9 +29,7 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#fooldal" className="flex items-center gap-2">
-          <div className="w-10 h-10 gradient-teal rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-heading text-lg">I</span>
-          </div>
+          <img src={illuLogo} alt="Illu Kft logo" className="h-10 w-auto object-contain" />
           <div className="leading-tight">
             <span className={`font-heading text-xl ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
               ILLU KFT
