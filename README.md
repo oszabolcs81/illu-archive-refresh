@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+Illu Kft
 
-TODO: Document your project here
+
