@@ -19,10 +19,7 @@ const HeroSection = () => {
         <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-primary-foreground mb-4">
           Megoldások az IT számos területén
         </h1>
-        <p className="text-primary-foreground/80 text-lg md:text-xl font-body font-light mb-3 italic">
-          "Backup & Restore any data anywhere"
-        </p>
-        <p className="text-primary-foreground/60 font-body text-sm mb-10">
+        <p className="text-primary-foreground/80 text-lg md:text-xl font-body font-light mb-10">
           Együtt megoldást találunk
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

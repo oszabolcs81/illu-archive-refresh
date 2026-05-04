@@ -86,10 +86,7 @@ const ContactSection = () => {
               </div>
             </div>
             <div className="bg-surface rounded-xl p-6 border border-border">
-              <p className="font-body text-sm text-muted-foreground italic">
-                "If you define the problem correctly, you almost have the solution" - SJ
-              </p>
-              <p className="font-body text-sm text-foreground font-medium mt-3">
+              <p className="font-body text-sm text-foreground font-medium">
                 Együtt megoldást találunk.
               </p>
             </div>
