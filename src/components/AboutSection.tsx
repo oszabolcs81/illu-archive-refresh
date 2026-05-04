@@ -20,16 +20,10 @@ const AboutSection = () => {
             úgy döntött átstrukturáljuk belső erőforrásainkat és az IT területen is hasznosítjuk a több 10 éves 
             tapasztalattal rendelkező szakemberek tudását.
           </p>
-          <p className="text-muted-foreground font-body leading-relaxed mb-6 text-sm">
+          <p className="text-muted-foreground font-body leading-relaxed text-sm">
             Jelenleg 3 fő területen nyújtunk szolgáltatásokat meglevő és új Ügyfeleink részére: 
             adatmentés, IT infrastruktúra és tanácsadás.
           </p>
-          <blockquote className="border-l-4 border-primary pl-4 py-2">
-            <p className="text-steel font-body italic text-sm">
-              "A mentés ugyanazért fontos, mint az autóban a légzsák, ha nem várt baj történik, 
-              védelmet nyújt és megakadályozza az esetleges további katasztrófát."
-            </p>
-          </blockquote>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -37,7 +31,7 @@ const AboutSection = () => {
             {
               icon: Shield,
               title: "Megbízhatóság",
-              text: "Több 10 éves tapasztalattal rendelkező szakemberek biztosítják a szolgáltatások magas színvonalát.",
+              text: "Közel 20 éves tapasztalattal rendelkező szakemberek biztosítják a szolgáltatások magas színvonalát.",
             },
             {
               icon: Clock,
@@ -46,7 +40,7 @@ const AboutSection = () => {
             },
             {
               icon: Users,
-              title: "Partneri viszony",
+              title: "Hatékonyság",
               text: "\"If you define the problem correctly, you almost have the solution\" - SJ",
             },
           ].map((item) => (
