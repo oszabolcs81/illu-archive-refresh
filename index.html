@@ -3,37 +3,40 @@
   <head>
   <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-<script>
-  // SPA redirect handler
-  (function(l) {
-    if (l.search[1] === '/') {
-      var decoded = l.search.slice(1).split('&').map(function(s) {
-        return s.replace(/~and~/g, '&')
-      }).join('?');
-      window.history.replaceState(null, null,
-        l.pathname.slice(0, -1) + decoded + l.hash
-      );
-    }
-  }(window.location))
-</script>
 
-  
+    <!-- Security headers -->
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none';" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-    <title>Illu Kft - Megoldások az IT számos területén</title>
-    <meta name="description" content="Illu Kft - IT megoldások: biztonsági mentés, IT infrastruktúra, tanácsadás. Backup &amp; Restore any data anywhere.">
-    <meta name="author" content="Illu Kft" />
+    <script>
+      // SPA redirect handler
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+
+    <title>ILLU Kft - Megoldások az IT számos területén</title>
+    <meta name="description" content="ILLU Kft - IT megoldások: biztonsági mentés, IT infrastruktúra, tanácsadás. Backup &amp; Restore any data anywhere.">
+    <meta name="author" content="ILLU Kft" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://illu.hu/" />
-    <meta property="og:title" content="Illu Kft - Megoldások az IT számos területén">
-    <meta property="og:description" content="Illu Kft - IT megoldások: biztonsági mentés, IT infrastruktúra, tanácsadás. Backup &amp; Restore any data anywhere.">
+    <meta property="og:title" content="ILLU Kft - Megoldások az IT számos területén">
+    <meta property="og:description" content="ILLU Kft - IT megoldások: biztonsági mentés, IT infrastruktúra, tanácsadás. Backup &amp; Restore any data anywhere.">
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Illu Kft - Megoldások az IT számos területén">
-    <meta name="twitter:description" content="Illu Kft - IT megoldások: biztonsági mentés, IT infrastruktúra, tanácsadás. Backup &amp; Restore any data anywhere.">
+    <meta name="twitter:title" content="ILLU Kft - Megoldások az IT számos területén">
+    <meta name="twitter:description" content="ILLU Kft - IT megoldások: biztonsági mentés, IT infrastruktúra, tanácsadás. Backup &amp; Restore any data anywhere.">
   </head>
 
   <body>
