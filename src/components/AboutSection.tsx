@@ -15,10 +15,12 @@ const AboutSection = () => {
 
         <div className="max-w-3xl mx-auto mb-14">
           <p className="text-muted-foreground font-body leading-relaxed mb-4 text-sm">
-            Cégünk azzal a céllal jött létre 2020-ban, hogy a megnövekedett iparági igényeket kiszolgálja. 
-            Az építőipar szerves részeként működő IT iparág megnövekvő igényeivel szembesülve, a felsővezetés 
-            úgy döntött átstrukturáljuk belső erőforrásainkat és az IT területen is hasznosítjuk a több 10 éves 
-            tapasztalattal rendelkező szakemberek tudását.
+            Cégünk 2020-ban alakult azzal a céllal, hogy magas színvonalon szolgálja ki a folyamatosan növekvő iparági elvárásokat. 
+            Működésünk során hamar világossá vált számunkra, hogy az IT terület kulcsszerepet tölt be a modern iparágak hatékony együttműködésében, 
+            és egyre meghatározóbbá válik a minőségi szolgáltatásnyújtásban. 
+            Erre a felismerésre alapozva a felsővezetés stratégiai döntést hozott: belső erőforrásaink átszervezésével, valamint több évtizedes szakmai tapasztalattal 
+            rendelkező szakembereink és megbízható partnereink tudására építve az IT szektor felé nyitottunk. 
+            Ennek eredményeként ma már olyan innovatív és megbízható informatikai megoldásokat kínálunk, amelyek megfelelnek a korszerű üzleti és technológiai követelményeknek.
           </p>
           <p className="text-muted-foreground font-body leading-relaxed text-sm">
             Jelenleg 3 fő területen nyújtunk szolgáltatásokat meglevő és új Ügyfeleink részére: 
