@@ -11,7 +11,7 @@ const ContactSection = () => {
           Vegye fel velünk a kapcsolatot
         </h2>
         <p className="text-muted-foreground font-body text-sm mb-10">
-          Írja meg igényét – 1 munkanapon belül visszajelzünk.
+          Írja meg pontos igényét – rövid időn belül visszajelzünk.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
