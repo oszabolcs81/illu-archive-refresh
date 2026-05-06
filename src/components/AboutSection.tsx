@@ -24,7 +24,7 @@ const AboutSection = () => {
           </p>
           <p className="text-muted-foreground font-body leading-relaxed text-sm">
             Jelenleg 3 fő területen nyújtunk szolgáltatásokat meglevő és új Ügyfeleink részére: 
-            adatmentés, IT infrastruktúra és tanácsadás.
+            adatok-szerverek-rendszerek mentése, IT infrastruktúra és általános IT tanácsadás.
           </p>
         </div>
 
@@ -37,13 +37,14 @@ const AboutSection = () => {
             },
             {
               icon: Clock,
-              title: "Gyors reakció",
-              text: "Nem várt esemény esetén időben és hatékonyan reagálva akár milliókban mérhető károktól óvhatjuk meg vállalkozását.",
+              title: "Gyors reakció és prevenció",
+              text: "Szakértő és gyors beavatkozással minimalizáljuk a károkat, proaktív megoldásainkkal pedig megelőzzük a problémák kialakulását.",
             },
             {
               icon: Users,
               title: "Hatékonyság",
-              text: "\"If you define the problem correctly, you almost have the solution\" - SJ",
+              text: "A hatékony megoldás ott kezdődik, hogy  megértjük az ügyfél problémáját.
+                \"If you define the problem correctly, you almost have the solution\" - S.J.",
             },
           ].map((item) => (
             <div key={item.title} className="text-center">
