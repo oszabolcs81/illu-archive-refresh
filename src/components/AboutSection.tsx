@@ -44,7 +44,7 @@ const AboutSection = () => {
               icon: Users,
               title: "Hatékonyság",
               text: "A hatékony megoldás ott kezdődik, hogy  megértjük az ügyfél problémáját."
-                \"If you define the problem correctly, you almost have the solution\" - S.J.",
+                "\"If you define the problem correctly, you almost have the solution\" - S.J.",
             },
           ].map((item) => (
             <div key={item.title} className="text-center">
