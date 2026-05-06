@@ -157,36 +157,13 @@ const LegalSection = () => {
                       <td className="px-3 py-2">USA – adattovábbítás SCC alapján</td>
                       <td className="px-3 py-2">GDPR 28. cikk, SCC</td>
                     </tr>
-                    <tr>
-                      <td className="px-3 py-2">Google LLC</td>
-                      <td className="px-3 py-2">Analitika (Google Analytics 4), térképszolgáltatás (Google Maps)</td>
-                      <td className="px-3 py-2">USA – adattovábbítás SCC alapján</td>
-                      <td className="px-3 py-2">
-                        GDPR 28. cikk, SCC;{" "}
-                        <a
-                          href="https://business.safety.google/adsprocessorterms/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-600 underline"
-                        >
-                          GA4 DPA
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-3 py-2">Meta Platforms, Inc.</td>
-                      <td className="px-3 py-2">Facebook közösségi beépülők (Social Plug-in)</td>
-                      <td className="px-3 py-2">USA – adattovábbítás SCC alapján (Schrems II utáni megfelelőség)</td>
-                      <td className="px-3 py-2">GDPR 28. cikk, SCC</td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
               <p className="mt-3 text-xs text-gray-500">
-                Az USA-ba irányuló adattovábbítás jogalapja minden esetben az Európai Bizottság által
+                Az USA-ba irányuló adattovábbítás jogalapja az Európai Bizottság által
                 jóváhagyott Standard Szerződéses Kikötések (Standard Contractual Clauses – SCC,
-                2021/914/EU határozat). A Schrems II ítélet (C-311/18) alapján az Illu Kft. esetileg
-                értékeli az adattovábbítás kockázatait.
+                2021/914/EU határozat).
               </p>
             </div>
 
@@ -195,8 +172,7 @@ const LegalSection = () => {
               <h3 className="text-lg font-semibold text-gray-900 mb-3">3. Kezelt személyes adatok köre</h3>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Kapcsolatfelvételi adatok: név, e-mail cím, telefonszám (önkéntes megadás alapján)</li>
-                <li>Technikai adatok: IP-cím, böngészőtípus, meglátogatott oldalak (Google Analytics 4 által gyűjtve, hozzájárulás esetén)</li>
-                <li>Cookie-k: analitikai és funkcionális sütik (részletesen ld. Cookie tájékoztató)</li>
+                <li>Technikai adatok: IP-cím, böngészőtípus (tárhelyszolgáltató szerverlogljai)</li>
               </ul>
             </div>
 
@@ -219,19 +195,9 @@ const LegalSection = () => {
                       <td className="px-3 py-2">5 év</td>
                     </tr>
                     <tr>
-                      <td className="px-3 py-2">Weboldal-analitika (GA4)</td>
-                      <td className="px-3 py-2">6. cikk (1) a) – hozzájárulás</td>
-                      <td className="px-3 py-2">26 hónap (GA4 alapértelmezett)</td>
-                    </tr>
-                    <tr>
-                      <td className="px-3 py-2">Google Maps megjelenítése</td>
-                      <td className="px-3 py-2">6. cikk (1) a) – hozzájárulás</td>
-                      <td className="px-3 py-2">Cookie lejártáig</td>
-                    </tr>
-                    <tr>
-                      <td className="px-3 py-2">Facebook Social Plug-in</td>
-                      <td className="px-3 py-2">6. cikk (1) a) – hozzájárulás</td>
-                      <td className="px-3 py-2">Cookie lejártáig</td>
+                      <td className="px-3 py-2">Tárhelyszolgáltatás (GitHub Pages szerverloglok)</td>
+                      <td className="px-3 py-2">6. cikk (1) f) – jogos érdek</td>
+                      <td className="px-3 py-2">GitHub adatkezelési szabályzata szerint</td>
                     </tr>
                   </tbody>
                 </table>
@@ -248,7 +214,6 @@ const LegalSection = () => {
                 <li><strong>Korlátozás joga</strong> (18. cikk)</li>
                 <li><strong>Adathordozhatóság joga</strong> (20. cikk)</li>
                 <li><strong>Tiltakozás joga</strong> (21. cikk): jogos érdeken alapuló kezelésnél</li>
-                <li><strong>Hozzájárulás visszavonása</strong> (7. cikk (3)): bármikor, a visszavonás nem érinti a korábbi kezelés jogszerűségét</li>
               </ul>
             </div>
 
@@ -288,51 +253,6 @@ const LegalSection = () => {
                 <strong>1 hónapon</strong> belül válaszol (szükség esetén további 2 hónappal
                 meghosszabbítható; meghosszabbításról az érintettet értesítjük). Megkeresés:
                 info@illu.hu
-              </p>
-            </div>
-
-            {/* 8. Cookie tájékoztató */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">8. Cookie (süti) tájékoztató</h3>
-              <p className="mb-3">
-                Az oldal az alábbi sütiket alkalmazza. Az analitikai és funkcionális sütik csak
-                az Ön kifejezett hozzájárulása esetén kerülnek beállításra (GDPR 7. cikk, ePrivacy irányelv).
-              </p>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm border border-gray-100 rounded-lg">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="text-left px-3 py-2 font-medium text-gray-600">Süti neve</th>
-                      <th className="text-left px-3 py-2 font-medium text-gray-600">Típus</th>
-                      <th className="text-left px-3 py-2 font-medium text-gray-600">Cél</th>
-                      <th className="text-left px-3 py-2 font-medium text-gray-600">Lejárat</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-100">
-                    <tr>
-                      <td className="px-3 py-2">illu_cookie_consent</td>
-                      <td className="px-3 py-2">Szükséges</td>
-                      <td className="px-3 py-2">Cookie-hozzájárulás tárolása</td>
-                      <td className="px-3 py-2">1 év</td>
-                    </tr>
-                    <tr>
-                      <td className="px-3 py-2">_ga, _ga_*</td>
-                      <td className="px-3 py-2">Analitikai</td>
-                      <td className="px-3 py-2">Google Analytics 4 – látogatói statisztika</td>
-                      <td className="px-3 py-2">2 év</td>
-                    </tr>
-                    <tr>
-                      <td className="px-3 py-2">Google Maps sütik</td>
-                      <td className="px-3 py-2">Funkcionális</td>
-                      <td className="px-3 py-2">Térkép megjelenítése, pozíció</td>
-                      <td className="px-3 py-2">6 hónap</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p className="mt-3 text-xs text-gray-500">
-                Hozzájárulását bármikor visszavonhatja a böngésző beállításaiban vagy a lábléc
-                „Cookie beállítások" gombjára kattintva.
               </p>
             </div>
 
