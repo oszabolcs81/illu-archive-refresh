@@ -167,28 +167,9 @@ const LegalSection = () => {
                 </table>
               </div>
             </div>
+            
 
-            {/* 3. Tárhelyszolgáltató */}
-            <div>
-              <h3 className="text-lg font-semibold text-foreground mb-3">3. Tárhelyszolgáltató tájékoztatás</h3>
-              <p>
-                Az illu.hu weboldalt a <strong>GitHub, Inc.</strong> (88 Colin P Kelly Jr St, San Francisco, CA 94107, USA)
-                szolgálja ki a GitHub Pages platformon keresztül. A GitHub a weboldalhoz beérkező
-                HTTP-kérésekkel kapcsolatos technikai naplókat (pl. IP-cím, dátum, kért URL) a saját
-                adatkezelési szabályzata alapján, önálló adatkezelőként kezeli. Erre az ILLU Kft.-nek
-                ráhatása nincs. Bővebb információ:{" "}
-                <a
-                  href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-teal underline"
-                >
-                  GitHub Privacy Statement
-                </a>.
-              </p>
-            </div>
-
-            {/* 4. Érintetti jogok */}
+            {/* 3. Érintetti jogok */}
             <div>
               <h3 className="text-lg font-semibold text-foreground mb-3">4. Az érintett jogai</h3>
               <ul className="list-disc pl-5 space-y-1">
@@ -205,7 +186,7 @@ const LegalSection = () => {
               </p>
             </div>
 
-            {/* 5. Panasz */}
+            {/* 4. Panasz */}
             <div>
               <h3 className="text-lg font-semibold text-foreground mb-3">5. Panasz benyújtása</h3>
               <p>
