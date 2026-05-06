@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import illuLogo from "@/assets/illu-logo.png";
 
 const navItems = [
   { label: "Főoldal", href: "#fooldal" },
@@ -8,6 +7,54 @@ const navItems = [
   { label: "Rólunk", href: "#rolunk" },
   { label: "Kapcsolat", href: "#kapcsolat" },
 ];
+
+// Inline SVG logo — IT/tech stilus
+// Concept: ">//" prompt szimbolum + ILLU wordmark, slim monoline
+const IlluLogo = () => (
+  <svg
+    width="120"
+    height="36"
+    viewBox="0 0 120 36"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-label="ILLU logo"
+    role="img"
+  >
+    {/* Prompt szimbolum: > */}
+    <polyline
+      points="4,10 13,18 4,26"
+      stroke="hsl(195,55%,52%)"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    {/* Underscore/cursor blink jel */}
+    <line
+      x1="17"
+      y1="26"
+      x2="25"
+      y2="26"
+      stroke="hsl(195,55%,52%)"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    {/* ILLU wordmark */}
+    <text
+      x="32"
+      y="24"
+      fontFamily="'DM Sans', 'Inter', sans-serif"
+      fontSize="17"
+      fontWeight="600"
+      letterSpacing="0.12em"
+      fill="currentColor"
+    >
+      ILLU
+    </text>
+    {/* Slim dot accent */}
+    <circle cx="114" cy="24" r="2.2" fill="hsl(195,55%,52%)" />
+  </svg>
+);
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -28,16 +75,12 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#fooldal" className="flex items-center gap-2">
-          <img src={illuLogo} alt="Illu Kft logo" className="h-10 w-auto object-contain" />
-          <div className="leading-tight">
-            <span className={`font-heading text-xl ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
-              ILLU KFT
-            </span>
-            <span className={`block text-[10px] tracking-[0.15em] uppercase ${scrolled ? "text-muted-foreground" : "text-primary-foreground/70"}`}>
-              Solutions for IT
-            </span>
-          </div>
+        <a href="#fooldal" className="flex items-center gap-1 group">
+          <span className={`transition-colors ${
+            scrolled ? "text-foreground" : "text-primary-foreground"
+          }`}>
+            <IlluLogo />
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -56,7 +99,10 @@ const Navbar = () => {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`md:hidden ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+          aria-label="Menü megnyitása"
+          className={`md:hidden ${
+            scrolled ? "text-foreground" : "text-primary-foreground"
+          }`}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
