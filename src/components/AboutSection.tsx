@@ -43,7 +43,7 @@ const AboutSection = () => {
             {
               icon: Users,
               title: "Hatékonyság",
-              text: "A hatékony megoldás ott kezdődik, hogy  megértjük az ügyfél problémáját.
+              text: "A hatékony megoldás ott kezdődik, hogy  megértjük az ügyfél problémáját."
                 \"If you define the problem correctly, you almost have the solution\" - S.J.",
             },
           ].map((item) => (
