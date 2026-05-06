@@ -6,21 +6,21 @@ const LegalSection = () => {
   const [activeTab, setActiveTab] = useState<Tab>("impresszum");
 
   return (
-    <section id="jogi" className="bg-gray-50 py-16 px-4">
+    <section id="jogi" className="bg-background py-16 px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Jogi információk</h2>
-        <p className="text-gray-500 mb-8 text-sm">
+        <h2 className="text-3xl font-bold text-foreground mb-2">Jogi információk</h2>
+        <p className="text-muted-foreground mb-8 text-sm">
           Kérjük, olvassa el az alábbi tájékoztatókat az illu.hu használata előtt.
         </p>
 
         {/* Tab navigáció */}
-        <div className="flex gap-2 mb-8 border-b border-gray-200">
+        <div className="flex gap-2 mb-8 border-b border-border">
           <button
             onClick={() => setActiveTab("impresszum")}
             className={`px-5 py-2.5 text-sm font-medium rounded-t-md transition-colors ${
               activeTab === "impresszum"
-                ? "bg-white border border-b-white border-gray-200 text-gray-900 -mb-px"
-                : "text-gray-500 hover:text-gray-700"
+                ? "bg-card border border-b-card border-border text-foreground -mb-px"
+                : "text-muted-foreground hover:text-foreground"
             }`}
           >
             Impresszum
@@ -29,8 +29,8 @@ const LegalSection = () => {
             onClick={() => setActiveTab("adatvedelem")}
             className={`px-5 py-2.5 text-sm font-medium rounded-t-md transition-colors ${
               activeTab === "adatvedelem"
-                ? "bg-white border border-b-white border-gray-200 text-gray-900 -mb-px"
-                : "text-gray-500 hover:text-gray-700"
+                ? "bg-card border border-b-card border-border text-foreground -mb-px"
+                : "text-muted-foreground hover:text-foreground"
             }`}
           >
             Adatvédelmi tájékoztató
@@ -39,23 +39,24 @@ const LegalSection = () => {
 
         {/* Impresszum */}
         {activeTab === "impresszum" && (
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 space-y-6 text-sm text-gray-700 leading-relaxed">
+          <div className="bg-card rounded-xl shadow-sm border border-border p-8 space-y-6 text-sm text-card-foreground leading-relaxed">
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">1. A szolgáltató adatai</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-3">1. A szolgáltató adatai</h3>
               <table className="w-full text-sm">
-                <tbody className="divide-y divide-gray-100">
+                <tbody className="divide-y divide-border">
                   {[
-                    ["Cégnév", "Illu Kft."],
-                    ["Székhely", "1143 Budapest, Semsey Andor utca 22. fszt. 4."],
-                    ["Cégjegyzékszám", "01-09-376097"],
-                    ["Adószám", "29012685-2-42"],
-                    ["Képviselő", "Oláh Szabolcs"],
+                    ["Teljes cégnév", "ILLU Építőipari és Ingatlanforgalmazó Korlátolt Felelősségű Társaság"],
+                    ["Rövidített név", "ILLU Kft."],
+                    ["Székhely", "2144 Kerepes, Bodza utca 20."],
+                    ["Cégjegyzékszám", "13-09-209218"],
+                    ["Adószám", "28950303-2-13"],
+                    ["Képviselő", "Oravecz Szabolcs"],
                     ["Elérhetőség", "info@illu.hu"],
                     ["Weboldal", "https://illu.hu"],
                   ].map(([k, v]) => (
                     <tr key={k}>
-                      <td className="py-2 pr-4 font-medium text-gray-600 w-40">{k}</td>
-                      <td className="py-2 text-gray-800">{v}</td>
+                      <td className="py-2 pr-4 font-medium text-muted-foreground w-48">{k}</td>
+                      <td className="py-2 text-foreground">{v}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -63,20 +64,21 @@ const LegalSection = () => {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">2. Tárhelyszolgáltató</h3>
-              <p>
+              <h3 className="text-lg font-semibold text-foreground mb-3">2. Tárhelyszolgáltató</h3>
+              <p className="text-card-foreground">
                 Az oldal tárhely-szolgáltatását a <strong>GitHub, Inc.</strong> (88 Colin P Kelly Jr St,
                 San Francisco, CA 94107, USA) biztosítja a GitHub Pages szolgáltatáson keresztül.
-                Az adatfeldolgozás jogalapja az EUMSZ 46. cikke szerinti Standard Szerződéses Kikötések (SCC).
+                A GitHub a saját adatkezelési szabályzata alapján kezeli a szerverlognaplokat;
+                erre az ILLU Kft. ráhatássel nem bír.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">3. Szerzői jogi nyilatkozat</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-3">3. Szerzői jogi nyilatkozat</h3>
               <p>
                 Az illu.hu weboldalon megjelenő valamennyi tartalom – ideértve, de nem kizárólagosan a
-                szövegeket, képeket, grafikákat, logókat és design elemeket – az Illu Kft. kizárólagos
-                szellemi tulajdonát képezi, vagy azok felhasználásához az Illu Kft. jogszerű
+                szövegeket, képeket, grafikákat, logókat és design elemeket – az ILLU Kft. kizárólagos
+                szellemi tulajdonát képezi, vagy azok felhasználásához az ILLU Kft. jogszerű
                 engedéllyel rendelkezik.
               </p>
               <p className="mt-2">
@@ -87,12 +89,12 @@ const LegalSection = () => {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">4. Felelősségkizárás</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-3">4. Felelősségkizárás</h3>
               <p>
-                Az Illu Kft. mindent megtesz annak érdekében, hogy a weboldalon szereplő információk
+                Az ILLU Kft. mindent megtesz annak érdekében, hogy a weboldalon szereplő információk
                 pontosak és naprakészek legyenek, azonban a tartalmak helyességéért, teljességéért
                 vagy időszerűségéért felelősséget nem vállal. A weboldalon elhelyezett külső hivatkozások
-                tartalmáért az Illu Kft. nem felel.
+                tartalmáért az ILLU Kft. nem felel.
               </p>
             </div>
           </div>
@@ -100,15 +102,15 @@ const LegalSection = () => {
 
         {/* Adatvédelmi tájékoztató */}
         {activeTab === "adatvedelem" && (
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 space-y-8 text-sm text-gray-700 leading-relaxed">
+          <div className="bg-card rounded-xl shadow-sm border border-border p-8 space-y-8 text-sm text-card-foreground leading-relaxed">
 
-            <p className="text-gray-500 text-xs">
-              Hatályos: 2024. január 1. | Jogalap:{" "}
+            <p className="text-muted-foreground text-xs">
+              Hatályos: 2025. január 1. | Jogalap:{" "}
               <a
                 href="https://eur-lex.europa.eu/eli/reg/2016/679/oj"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline"
+                className="text-teal underline"
               >
                 EU 2016/679 rendelet (GDPR)
               </a>
@@ -116,17 +118,18 @@ const LegalSection = () => {
 
             {/* 1. Adatkezelő */}
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">1. Az adatkezelő adatai</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-3">1. Az adatkezelő adatai</h3>
               <table className="w-full text-sm">
-                <tbody className="divide-y divide-gray-100">
+                <tbody className="divide-y divide-border">
                   {[
-                    ["Név", "Illu Kft."],
-                    ["Székhely", "1143 Budapest, Semsey Andor utca 22. fszt. 4."],
-                    ["Adószám", "29012685-2-42"],
+                    ["Név", "ILLU Építőipari és Ingatlanforgalmazó Kft."],
+                    ["Székhely", "2144 Kerepes, Bodza utca 20."],
+                    ["Cégjegyzékszám", "13-09-209218"],
+                    ["Adószám", "28950303-2-13"],
                     ["E-mail", "info@illu.hu"],
                   ].map(([k, v]) => (
                     <tr key={k}>
-                      <td className="py-2 pr-4 font-medium text-gray-600 w-40">{k}</td>
+                      <td className="py-2 pr-4 font-medium text-muted-foreground w-48">{k}</td>
                       <td className="py-2">{v}</td>
                     </tr>
                   ))}
@@ -134,126 +137,94 @@ const LegalSection = () => {
               </table>
             </div>
 
-            {/* 2. Adatfeldolgozók */}
+            {/* 2. Adatkezelés tárgya */}
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">2. Adatfeldolgozók</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-3">2. Kezelt adatok és az adatkezelés célja</h3>
               <p className="mb-3">
-                Az Illu Kft. az alábbi harmadik fél adatfeldolgozókat veszi igénybe:
+                Az illu.hu weboldal nem működtet regisztrációs, űrlap- vagy hozzászólás funkciót.
+                Személyes adat kizárólag akkor kerül az ILLU Kft. tudomására, ha az érintett
+                önkentesen, e-mailben keresi fel a társaságot az alábbi címen:
+                {" "}<a href="mailto:info@illu.hu" className="text-teal underline">info@illu.hu</a>.
               </p>
               <div className="overflow-x-auto">
-                <table className="w-full text-sm border border-gray-100 rounded-lg">
-                  <thead className="bg-gray-50">
+                <table className="w-full text-sm border border-border rounded-lg">
+                  <thead className="bg-secondary">
                     <tr>
-                      <th className="text-left px-3 py-2 font-medium text-gray-600">Adatfeldolgozó</th>
-                      <th className="text-left px-3 py-2 font-medium text-gray-600">Tevékenység</th>
-                      <th className="text-left px-3 py-2 font-medium text-gray-600">Székhely / Adattovábbítás</th>
-                      <th className="text-left px-3 py-2 font-medium text-gray-600">Jogalap</th>
+                      <th className="text-left px-3 py-2 font-medium text-muted-foreground">Adatok köre</th>
+                      <th className="text-left px-3 py-2 font-medium text-muted-foreground">Cél</th>
+                      <th className="text-left px-3 py-2 font-medium text-muted-foreground">Jogalap (GDPR)</th>
+                      <th className="text-left px-3 py-2 font-medium text-muted-foreground">Megőrzési idő</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-100">
+                  <tbody className="divide-y divide-border">
                     <tr>
-                      <td className="px-3 py-2">GitHub, Inc.</td>
-                      <td className="px-3 py-2">Tárhelyszolgáltatás (GitHub Pages)</td>
-                      <td className="px-3 py-2">USA – adattovábbítás SCC alapján</td>
-                      <td className="px-3 py-2">GDPR 28. cikk, SCC</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p className="mt-3 text-xs text-gray-500">
-                Az USA-ba irányuló adattovábbítás jogalapja az Európai Bizottság által
-                jóváhagyott Standard Szerződéses Kikötések (Standard Contractual Clauses – SCC,
-                2021/914/EU határozat).
-              </p>
-            </div>
-
-            {/* 3. Kezelt adatok */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">3. Kezelt személyes adatok köre</h3>
-              <ul className="list-disc pl-5 space-y-1">
-                <li>Kapcsolatfelvételi adatok: név, e-mail cím, telefonszám (önkéntes megadás alapján)</li>
-                <li>Technikai adatok: IP-cím, böngészőtípus (tárhelyszolgáltató szerverlogljai)</li>
-              </ul>
-            </div>
-
-            {/* 4. Adatkezelés célja */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">4. Az adatkezelés célja és jogalapja</h3>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm border border-gray-100 rounded-lg">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="text-left px-3 py-2 font-medium text-gray-600">Cél</th>
-                      <th className="text-left px-3 py-2 font-medium text-gray-600">Jogalap (GDPR)</th>
-                      <th className="text-left px-3 py-2 font-medium text-gray-600">Megőrzési idő</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-100">
-                    <tr>
-                      <td className="px-3 py-2">Kapcsolatfelvételi üzenetek kezelése</td>
-                      <td className="px-3 py-2">6. cikk (1) b) – szerződés teljesítése / f) – jogos érdek</td>
+                      <td className="px-3 py-2">Név, e-mail cím, az e-mail tartalma</td>
+                      <td className="px-3 py-2">Kapcsolatfelvételi megkeresés megválaszolása</td>
+                      <td className="px-3 py-2">6. cikk (1) b) – szerződés előkészítése / f) – jogos érdek</td>
                       <td className="px-3 py-2">5 év</td>
                     </tr>
-                    <tr>
-                      <td className="px-3 py-2">Tárhelyszolgáltatás (GitHub Pages szerverloglok)</td>
-                      <td className="px-3 py-2">6. cikk (1) f) – jogos érdek</td>
-                      <td className="px-3 py-2">GitHub adatkezelési szabályzata szerint</td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
             </div>
 
-            {/* 5. Érintetti jogok */}
+            {/* 3. Tárhelyszolgáltató */}
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">5. Az érintett jogai</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-3">3. Tárhelyszolgáltató tájékoztatás</h3>
+              <p>
+                Az illu.hu weboldalt a <strong>GitHub, Inc.</strong> (88 Colin P Kelly Jr St, San Francisco, CA 94107, USA)
+                szolgálja ki a GitHub Pages platformon keresztül. A GitHub a weboldalhoz beérkező
+                HTTP-kérésekkel kapcsolatos technikai naplókat (pl. IP-cím, dátum, kért URL) a saját
+                adatkezelési szabályzata alapján, önálló adatkezelőként kezeli. Erre az ILLU Kft.-nek
+                ráhatása nincs. Bővebb információ:{" "}
+                <a
+                  href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-teal underline"
+                >
+                  GitHub Privacy Statement
+                </a>.
+              </p>
+            </div>
+
+            {/* 4. Érintetti jogok */}
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">4. Az érintett jogai</h3>
               <ul className="list-disc pl-5 space-y-1">
                 <li><strong>Hozzáférés joga</strong> (GDPR 15. cikk): tájékoztatás kérhető a kezelt adatokról</li>
                 <li><strong>Helyesbítés joga</strong> (16. cikk): pontatlan adatok javítása</li>
                 <li><strong>Törlés joga</strong> (17. cikk – „elfeledtetéshez való jog")</li>
                 <li><strong>Korlátozás joga</strong> (18. cikk)</li>
-                <li><strong>Adathordozhatóság joga</strong> (20. cikk)</li>
                 <li><strong>Tiltakozás joga</strong> (21. cikk): jogos érdeken alapuló kezelésnél</li>
               </ul>
+              <p className="mt-3">
+                Az érintett jogait az <a href="mailto:info@illu.hu" className="text-teal underline">info@illu.hu</a> címen
+                gyakorolhatja. Az ILLU Kft. a GDPR 12. cikk (3) bekezdése alapján <strong>1 hónapon</strong> belül válaszol
+                (szükség esetén további 2 hónappal meghosszabbítható).
+              </p>
             </div>
 
-            {/* 6. Panasz */}
+            {/* 5. Panasz */}
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">6. Panasz benyújtása</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-3">5. Panasz benyújtása</h3>
               <p>
-                Az érintett panaszt nyújthat be a Nemzeti Adatvédelmi és Információszabadság Hatósághoz
-                (NAIH):
+                Az érintett panaszt nyújthat be a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (NAIH):
               </p>
-              <address className="not-italic mt-2 bg-gray-50 rounded-lg p-4 text-sm">
+              <address className="not-italic mt-2 bg-secondary rounded-lg p-4 text-sm">
                 <strong>NAIH</strong><br />
                 Székhely: <strong>1055 Budapest, Alkotmány u. 3.</strong><br />
                 Postacím: 1363 Budapest, Pf.: 9.<br />
                 Tel.: +36 (1) 391-1400<br />
                 E-mail:{" "}
-                <a href="mailto:ugyfelszolgalat@naih.hu" className="text-blue-600 underline">
+                <a href="mailto:ugyfelszolgalat@naih.hu" className="text-teal underline">
                   ugyfelszolgalat@naih.hu
                 </a><br />
                 Web:{" "}
-                <a
-                  href="https://www.naih.hu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 underline"
-                >
+                <a href="https://www.naih.hu" target="_blank" rel="noopener noreferrer" className="text-teal underline">
                   www.naih.hu
                 </a>
               </address>
-            </div>
-
-            {/* 7. Megkeresés, válaszidő */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">7. Kapcsolat és válaszidő</h3>
-              <p>
-                Adatvédelmi megkeresések esetén az Illu Kft. a GDPR 12. cikk (3) bekezdése alapján{" "}
-                <strong>1 hónapon</strong> belül válaszol (szükség esetén további 2 hónappal
-                meghosszabbítható; meghosszabbításról az érintettet értesítjük). Megkeresés:
-                info@illu.hu
-              </p>
             </div>
 
           </div>
