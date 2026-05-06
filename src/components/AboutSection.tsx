@@ -40,12 +40,11 @@ const AboutSection = () => {
               title: "Gyors reakció és prevenció",
               text: "Szakértő és gyors beavatkozással minimalizáljuk a károkat, proaktív megoldásainkkal pedig megelőzzük a problémák kialakulását.",
             },
-            {
-              icon: Users,
-              title: "Hatékonyság",
-              text: "A hatékony megoldás ott kezdődik, hogy  megértjük az ügyfél problémáját."
-                "\"If you define the problem correctly, you almost have the solution\" - S.J.",
-            },
+             {
+            icon: Users,
+            title: "Hatékonyság",
+            text: 'A hatékony megoldás ott kezdődik, hogy megértjük az ügyfél problémáját. "If you define the problem correctly, you almost have the solution" - S.J.',
+             },
           ].map((item) => (
             <div key={item.title} className="text-center">
               <div className="w-14 h-14 gradient-teal rounded-xl flex items-center justify-center mx-auto mb-4">
