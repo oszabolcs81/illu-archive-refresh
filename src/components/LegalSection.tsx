@@ -10,7 +10,7 @@ const LegalSection = () => {
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-foreground mb-2">Jogi információk</h2>
         <p className="text-muted-foreground mb-8 text-sm">
-          Kérjük, olvassa el az alábbi tájékoztatókat az illu.hu használata előtt.
+          Kérjük, olvassa el az alábbi tájékoztatókat.
         </p>
 
         {/* Tab navigáció */}
@@ -68,8 +68,8 @@ const LegalSection = () => {
               <p className="text-card-foreground">
                 Az oldal tárhely-szolgáltatását a <strong>GitHub, Inc.</strong> (88 Colin P Kelly Jr St,
                 San Francisco, CA 94107, USA) biztosítja a GitHub Pages szolgáltatáson keresztül.
-                A GitHub a saját adatkezelési szabályzata alapján kezeli a szerverlognaplokat;
-                erre az ILLU Kft. ráhatássel nem bír.
+                A GitHub a saját adatkezelési szabályzata alapján kezeli a szerver/ log naplókat;
+                erre az ILLU Kft. ráhatással nem bír.
               </p>
             </div>
 
@@ -105,7 +105,7 @@ const LegalSection = () => {
           <div className="bg-card rounded-xl shadow-sm border border-border p-8 space-y-8 text-sm text-card-foreground leading-relaxed">
 
             <p className="text-muted-foreground text-xs">
-              Hatályos: 2025. január 1. | Jogalap:{" "}
+              Hatályos: 2026. május 6. | Jogalap:{" "}
               <a
                 href="https://eur-lex.europa.eu/eli/reg/2016/679/oj"
                 target="_blank"
