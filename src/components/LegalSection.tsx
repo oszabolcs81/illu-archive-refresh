@@ -171,7 +171,7 @@ const LegalSection = () => {
 
             {/* 3. Érintetti jogok */}
             <div>
-              <h3 className="text-lg font-semibold text-foreground mb-3">4. Az érintett jogai</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-3">3. Az érintett jogai</h3>
               <ul className="list-disc pl-5 space-y-1">
                 <li><strong>Hozzáférés joga</strong> (GDPR 15. cikk): tájékoztatás kérhető a kezelt adatokról</li>
                 <li><strong>Helyesbítés joga</strong> (16. cikk): pontatlan adatok javítása</li>
@@ -188,7 +188,7 @@ const LegalSection = () => {
 
             {/* 4. Panasz */}
             <div>
-              <h3 className="text-lg font-semibold text-foreground mb-3">5. Panasz benyújtása</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-3">4. Panasz benyújtása</h3>
               <p>
                 Az érintett panaszt nyújthat be a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (NAIH):
               </p>
