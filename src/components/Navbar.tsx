@@ -2,11 +2,16 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "Főoldal", href: "#fooldal" },
-  { label: "Szolgáltatások", href: "#szolgaltatasok" },
-  { label: "Rólunk", href: "#rolunk" },
-  { label: "Kapcsolat", href: "#kapcsolat" },
+  { label: "Főoldal",        id: "fooldal" },
+  { label: "Szolgáltatások", id: "szolgaltatasok" },
+  { label: "Rólunk",         id: "rolunk" },
+  { label: "Kapcsolat",      id: "kapcsolat" },
 ];
+
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+};
 
 const IlluLogo = ({ onHero }: { onHero: boolean }) => (
   <svg
@@ -75,21 +80,25 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#fooldal" className="flex items-center">
+        <button
+          onClick={() => scrollToSection("fooldal")}
+          className="flex items-center cursor-pointer"
+          aria-label="Főoldalra ugrás"
+        >
           <IlluLogo onHero={onHero} />
-        </a>
+        </button>
 
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <a
+            <button
               key={item.label}
-              href={item.href}
-              className={`text-sm font-body font-medium tracking-wide transition-colors hover:text-primary ${
+              onClick={() => scrollToSection(item.id)}
+              className={`text-sm font-body font-medium tracking-wide transition-colors hover:text-primary cursor-pointer ${
                 scrolled ? "text-foreground" : "text-white drop-shadow-md"
               }`}
             >
               {item.label}
-            </a>
+            </button>
           ))}
         </div>
 
@@ -108,14 +117,13 @@ const Navbar = () => {
         <div className="md:hidden bg-surface border-b border-border shadow-lg">
           <div className="px-6 py-4 flex flex-col gap-4">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.label}
-                href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-foreground hover:text-primary transition-colors font-body"
+                onClick={() => { scrollToSection(item.id); setMobileOpen(false); }}
+                className="text-foreground hover:text-primary transition-colors font-body text-left cursor-pointer"
               >
                 {item.label}
-              </a>
+              </button>
             ))}
           </div>
         </div>
