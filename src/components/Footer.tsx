@@ -1,3 +1,15 @@
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+};
+
+const footerNavItems = [
+  { label: "Főoldal",        id: "fooldal" },
+  { label: "Szolgáltatások", id: "szolgaltatasok" },
+  { label: "Rólunk",         id: "rolunk" },
+  { label: "Kapcsolat",      id: "kapcsolat" },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-steel text-primary-foreground py-10 px-6">
@@ -18,14 +30,14 @@ const Footer = () => {
           <div>
             <h4 className="font-body font-semibold text-sm mb-3 text-primary-foreground/80">Navigáció</h4>
             <div className="space-y-2">
-              {["Főoldal", "Szolgáltatások", "Rólunk", "Kapcsolat"].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace("ő", "o").replace("á", "a")}`}
-                  className="block text-primary-foreground/60 hover:text-primary-foreground transition-colors font-body text-sm"
+              {footerNavItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block text-primary-foreground/60 hover:text-primary-foreground transition-colors font-body text-sm cursor-pointer text-left"
                 >
-                  {item}
-                </a>
+                  {item.label}
+                </button>
               ))}
             </div>
           </div>

@@ -1,5 +1,10 @@
 import heroBg from "@/assets/hero-bg.jpg";
 
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+};
+
 const HeroSection = () => {
   return (
     <section id="fooldal" className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
@@ -24,18 +29,18 @@ const HeroSection = () => {
           Együtt megoldást találunk
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#szolgaltatasok"
-            className="gradient-teal text-white font-body font-medium px-8 py-3.5 rounded-lg hover:opacity-90 transition-opacity"
+          <button
+            onClick={() => scrollToSection("szolgaltatasok")}
+            className="gradient-teal text-white font-body font-medium px-8 py-3.5 rounded-lg hover:opacity-90 transition-opacity cursor-pointer"
           >
             Szolgáltatások
-          </a>
-          <a
-            href="#kapcsolat"
-            className="border border-white/30 text-white font-body font-medium px-8 py-3.5 rounded-lg hover:bg-white/10 transition-colors"
+          </button>
+          <button
+            onClick={() => scrollToSection("kapcsolat")}
+            className="border border-white/30 text-white font-body font-medium px-8 py-3.5 rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
           >
             Kapcsolat
-          </a>
+          </button>
         </div>
       </div>
     </section>
